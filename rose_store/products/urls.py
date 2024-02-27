@@ -11,19 +11,53 @@ from .views import (
     houseplant_api_view,
     order_api_view,
     gift_api_view,
+    send_email_views
+
 )
 
 app_name = "products"
 
 urlpatterns = [
     path("", home),
-    path("flowers/", flower_api_view),
-    path("products/", product_api_view),
-    path("baskets/", basket_api_view),
-    path("entourages/", entourage_api_view),
-    path("branches/", branch_api_view),
-    path("packages/", package_api_view),
-    path("houseplants/", houseplant_api_view),
-    path("orders/", order_api_view),
-    path("gifts/", gift_api_view),
+    path(
+        "flowers/", 
+        flower_api_view,
+        name="flowers"
+    ),
+    path("products/",
+          product_api_view,
+          name="products"
+    ),
+    path("baskets/",
+          basket_api_view,
+          name="baskets"
+    ),
+    path("entourages/",
+          entourage_api_view,
+          name="entourages"
+    ),
+    path("branches/",
+          branch_api_view,
+          name="branches"
+    ),
+    path("packages/",
+          package_api_view,
+          name="packages"
+    ),
+    path("houseplants/",
+          houseplant_api_view,
+          name="houseplants"
+    ),
+    path("orders/",
+          order_api_view,
+          name="orders"
+    ),
+    path("gifts/",
+          gift_api_view,
+          name="gifts"
+    ),
+    path("index/",
+         send_email_views,
+         name="index"
+         )
 ]
